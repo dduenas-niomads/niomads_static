@@ -1,7 +1,7 @@
 <?php
 
     $to = "info@niomads.com";
-    $subject = "NIOMADS: Contacto web";
+    $subject = "NIOMADS WEB: " . strip_tags($_POST['subject']);
     $message = '<html><body>';
     $message = $message . '<table rules="all" style="border-color: #666;" cellpadding="10">';
     $message = $message . "<tr style='background: #eee;'><td><strong>Nombres completos: </strong> </td><td>" . strip_tags($_POST['name']) . "</td></tr>";
