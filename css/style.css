@@ -262,6 +262,13 @@ nav ul ul li,
 .nav-tabs .nav-link,
 .coupan-col > input,
 .coupan-col button,
+.btn-init {
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	-ms-border-radius: 30px;
+	-o-border-radius: 30px;
+	border-radius: 30px;
+}
 .btn-default {
 	-webkit-border-radius: 30px;
 	-moz-border-radius: 30px;
@@ -549,26 +556,45 @@ header.ab {
 
 
 .banner-section {
-	background-image: url(../images/resources/banner-img.png);
+	background-image: url(../images/niomads/bg.png);
 	background-repeat: no-repeat;
-	background-size: cover;
-	padding: 250px 0 400px; 
+	background-size: contain;
+	padding-bottom: 250px;
 }
 .banner-text {
 	max-width: 585px;
 	position: relative;
 	left: -80px;
+	padding: 120px 0px 0px;
 }
 .banner-text > h2 {
-	color: #222222;
+	color: #ffffff;
 	font-size: 54px;
 	line-height: 84px;
 	font-weight: 700;
-	margin: 0 0 20px;
+}
+.banner-text > h1 {
+	color: rgba(255, 255, 255, 0.822);
+	font-size: 28px;
 }
 .banner-text > p {
 	margin-bottom: 30px;
 	max-width: 515px;
+}
+.btn-init {
+	display: inline-block;
+	color: rgba(255, 255, 255, 0.822);
+	font-size: 16px;
+	font-weight: 700;
+	height: 60px;
+	line-height: 56px;
+	padding: 0 40px;
+	text-transform: capitalize;
+	border:2px solid rgba(255, 255, 255, 0.822);
+}
+.btn-init:hover {
+	background-color: #6836ff;
+	color: #fff;
 }
 .btn-default {
 	display: inline-block;
@@ -591,7 +617,7 @@ header.ab {
 
 
 .how-works-sec {
-	padding-top: 100px;
+	padding-top: 50px;
 	padding-bottom: 76px;
 }
 .sec-title {
@@ -3363,6 +3389,10 @@ header.style2 .header-content {
 }
 .ctt-icon.clr3 {
 	border-color: #ff1c1c;
+}
+
+.ctt-icon.clr4 {
+	border-color: #ff8a1c;
 }
 
 
