@@ -364,10 +364,11 @@
             var form = '#contact-form';
             var name = $('#contact-form .name').val();
             var email = $('#contact-form .email').val();
-            if(name == '' || email == '')
-            {
+            if(name == '' || email == '') {
                $('#contact-form .response').html('<div class="failed">Porfavor, complete los campos de nombre y correo electrónico.</div>');
                return false;
+            } else {
+               console.log(name, email);
             }
             $.ajax({
                url:"sendemail.php",
