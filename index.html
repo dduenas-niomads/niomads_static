@@ -361,17 +361,18 @@
             sendMail();
          }
          function sendMail() {
-            var name = document.getElementById('contact_form_name').value;
-            var email = document.getElementById('contact_form_email').value;
-            var phone = document.getElementById('contact_form_phone').value;
-            var subject = document.getElementById('contact_form_subject').value;
-            var message = document.getElementById('contact_form_message').value;
+            var name = document.getElementById('contact_form_name');
+            var email = document.getElementById('contact_form_email');
+            var phone = document.getElementById('contact_form_phone');
+            var subject = document.getElementById('contact_form_subject');
+            var message = document.getElementById('contact_form_message');
             if(name == "" || email == "") {
-               console.log(name, email);
+               console.log(false, name, email);
                $('#contact-form .response').html('<div class="failed">Porfavor, complete los campos de nombre y correo electrónico.</div><br>');
                return false;
             } else {
-               console.log(name, email);
+               console.log(true, name, email);
+               return false;
                $.ajax({
                   url:"sendemail.php",
                   method:"POST",
