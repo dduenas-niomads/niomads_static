@@ -184,19 +184,25 @@
                <div class="partner-sec-details">
                   <div class="pt-carousel">
                      <div class="partner-col">
-                        <a href="https://www.adidas.pe/" target="_blank" title="Adidas Perú"><img src="https://www.adidas.pe/glass/react/b800dbd/assets/img/icon-adidas-logo.svg" alt="Adidas Perú" height="100px"></a>
-                     </div>
-                     <div class="partner-col">
                         <a href="https://mehperu.com/" target="_blank" title="Meh Perú"><img src="https://cdn.shopify.com/s/files/1/0025/5308/6019/files/MEH_1_300x300.png?v=1591326725" alt="Meh Perú" height="100px"></a>
                      </div>
                      <div class="partner-col">
-                        <a href="https://defreesa.com" target="_blank" title="Defreesa Perú"><img src="" alt="Defreesa Perú" height="100px"></a>
+                        <a href="https://bellaworksclo.com" target="_blank" title="BellaWorks Fitness wear"><img src="images/bellaworksclo.jpg" alt="BellaWorks Fitness wear" height="100px"></a>
                      </div>
                      <div class="partner-col">
-                        <a href="https://www.huaweicloud.com/" target="_blank" title="Huawei Cloud"><img src="images/niomads/hclogo.png" alt="Huawei Cloud" height="100px"></a>
+                        <a href="https://autenticatribu.com" target="_blank" title="Auténtica Tribu"><img src="https://autenticatribu.com/argon/img/logo.svg" alt="Auténtica Tribu" height="100px"></a>
+                     </div>
+                     <div class="partner-col">
+                        <a href="https://jcugarte.com" target="_blank" title="JC Ugarte Import SAC"><img src="https://jcugarte.com/store/images/logo_web.png" alt="JC Ugarte Import SAC" height="100px"></a>
+                     </div>
+                     <div class="partner-col">
+                        <a href="https://joyaspino.com" target="_blank" title="Joyas Pino SAC"><img src="https://joyaspino.com/wp-content/uploads/2022/03/Logo-color-joyaspino.png" alt="Joyas Pino SAC" height="100px"></a>
                      </div>
                      <div class="partner-col">
                         <a href="https://www.facturaprepago.com" target="_blank" title="Factura Prepago Latam"><img src="https://admin.facturaprepago.com/img/logo.png" alt="Factura Prepago Latam" height="100px"></a>
+                     </div>
+                     <div class="partner-col">
+                        <a href="https://www.adidas.pe/" target="_blank" title="Adidas Perú"><img src="https://www.adidas.pe/glass/react/b800dbd/assets/img/icon-adidas-logo.svg" alt="Adidas Perú" height="100px"></a>
                      </div>
                   </div>
                </div>
@@ -267,6 +273,8 @@
 													<textarea name="message" placeholder="Mensaje" maxlength="250"></textarea>
 												</div><!--form-field end-->
 											</div>
+                                 <span class="msg-error error"></span>
+                                 <div id="recaptcha" class="g-recaptcha" data-sitekey="6LfVvEwfAAAAANhVaP6YpxmkS4ptCSoP4P5iiALl"></div>
 											<div class="col-lg-12">
 												<div class="form-submit">
 													<button type="button" class="btn-init" id="submit">Enviar</button>
@@ -294,7 +302,8 @@
                                         <img src="images/icon16.png" alt="">
                                     </div>
                                     <div class="ctt-info">
-                                        <span>9:00am a 6:00pm Domingos cerrado</span>
+                                        <span>Lu-Sa: 9:00am - 5:00pm</span> <br>
+                                        <span>Domingos cerrado</span>
                                     </div>
                                 </div><!--contact_info end-->
                                 <br>
@@ -303,7 +312,8 @@
                                         <img src="images/icon17.png" alt="">
                                     </div>
                                     <div class="ctt-info">
-                                        <span>Av Leguía y Meléndez 1112, Pueblo Libre 15084 Lima</span>
+                                       <span>Av Leguía y Meléndez 1112, Lima</span> <br>
+                                       <span>3169 SW 25th, Florida 33133</span>
                                     </div>
                                 </div><!--contact_info end-->
                                 <br>
@@ -312,7 +322,7 @@
                                         <img src="images/icon18.png" alt="">
                                     </div>
                                     <div class="ctt-info">
-                                        <span>+51 922556776</span>
+                                        <span>+51 952334059</span>
                                     </div>
                                 </div><!--contact_info end-->
                                 <br>
@@ -353,5 +363,56 @@
       <script src="js/lib/slick/slick.js" type="c3fa944911769d55fb178ded-text/javascript"></script>
       <script src="js/script.js" type="c3fa944911769d55fb178ded-text/javascript"></script>
       <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="c3fa944911769d55fb178ded-|49" defer=""></script>
+      <script async src='https://www.google.com/recaptcha/api.js?hl=es'></script>
+
+      <script>
+         $( '#btn-validate' ).click(function(){
+            var $captcha = $( '#recaptcha' ),
+                  response = grecaptcha.getResponse();
+               if (response.length === 0) {
+               $( '.msg-error').text( "reCAPTCHA is mandatory" );
+               if( !$captcha.hasClass( "error" ) ){
+                  $captcha.addClass( "error" );
+               }
+            } else {
+               $( '.msg-error' ).text('');
+               $captcha.removeClass( "error" );
+               alert( 'reCAPTCHA marked' );
+            }
+         });
+      </script>
+      <style>
+         .msg-error {
+            color: #c65848;
+         }
+         .g-recaptcha.error {
+            border: solid 2px #c64848;
+            padding: .2em;
+            width: 19em;
+         }
+         .float{
+             position:fixed;
+             width:60px;
+             height:60px;
+             bottom:40px;
+             right:40px;
+             background-color:#25d366;
+             color:#FFF;
+             border-radius:50px;
+             text-align:center;
+         font-size:30px;
+             box-shadow: 2px 2px 3px #999;
+         z-index:100;
+         }
+     
+         .my-float{
+             margin-top:16px;
+         }
+     </style>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+     <a href="https://api.whatsapp.com/send?phone=51952334059&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n." class="float" target="_blank">
+         <i class="fa fa-whatsapp my-float"></i>
+     </a>
+      
    </body>
 </html>
