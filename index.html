@@ -365,7 +365,7 @@
             var name = $('#contact-form .name').val();
             var email = $('#contact-form .email').val();
             if(!name || !email) {
-               $('#contact-form .response').html('<div class="failed">Porfavor, complete los campos de nombre y correo electrónico.</div>');
+               $('#contact-form .response').html('<div class="failed">Porfavor, complete los campos de nombre y correo electrónico.</div><br>');
                return false;
             } else {
                console.log(name, email);
@@ -375,7 +375,7 @@
                method:"POST",
                data: $(form).serialize(),
                beforeSend:function(){
-                  $('#contact-form .response').html('<div class="text-info">Enviando...</div>');
+                  $('#contact-form .response').html('<div class="text-info">Enviando...</div><br>');
                },
                success:function(data){
                   $('form').trigger("reset");
