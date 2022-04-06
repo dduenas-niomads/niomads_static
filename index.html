@@ -366,12 +366,12 @@
             var phone = document.getElementById('contact_form_phone');
             var subject = document.getElementById('contact_form_subject');
             var message = document.getElementById('contact_form_message');
-            if(name == "" || email == "") {
+            if(name.value == "" || email.value == "") {
                console.log(false, name, email);
                $('#contact-form .response').html('<div class="failed">Porfavor, complete los campos de nombre y correo electrónico.</div><br>');
                return false;
             } else {
-               console.log(true, name, email);
+               console.log(true, name.value, email.value);
                return false;
                $.ajax({
                   url:"sendemail.php",
