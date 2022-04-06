@@ -273,69 +273,60 @@
 													<textarea name="message" placeholder="Mensaje" maxlength="250"></textarea>
 												</div><!--form-field end-->
 											</div>
-                                 <span class="msg-error error"></span>
-                                 <div id="recaptcha" class="g-recaptcha" data-sitekey="6LfVvEwfAAAAANhVaP6YpxmkS4ptCSoP4P5iiALl"></div>
 											<div class="col-lg-12">
 												<div class="form-submit">
-													<button type="button" class="btn-init" id="submit">Enviar</button>
+                                       <button type="button" class="g-recaptcha btn-init" 
+                                          data-sitekey="6LfVvEwfAAAAANhVaP6YpxmkS4ptCSoP4P5iiALl" 
+                                          data-callback='onSubmit' 
+                                          data-action='submit'>Submit</button>
+													<!-- <button type="button" class="btn-init" id="submit">Enviar</button> -->
 												</div>
 											</div>
 										</div>
-									</form><!--form-roww end-->
-									<!-- <div class="our_social_links">
-										<h3>Our Socials Links</h3>
-										<p>Print this page to PDF for the complete set of vectors.</p>
-										<ul class="social-links">
-											<li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#" title=""><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#" title=""><i class="fa fa-skype"></i></a></li>
-											<li><a href="#" title=""><i class="fa fa-linkedin"></i></a></li>
-										</ul>
-									</div> -->
-                                    <!--our_social_links end-->
+									</form>
 								</div><!--contact-col end-->
 							</div>
-                            <div class="col-lg-6">
-                                <br>
-                                <div class="contact_info">
-                                    <div class="ctt-icon">
-                                        <img src="images/icon16.png" alt="">
-                                    </div>
-                                    <div class="ctt-info">
-                                        <span>Lu-Sa: 9:00am - 5:00pm</span> <br>
-                                        <span>Domingos cerrado</span>
-                                    </div>
-                                </div><!--contact_info end-->
-                                <br>
-                                <div class="contact_info">
-                                    <div class="ctt-icon clr2">
-                                        <img src="images/icon17.png" alt="">
-                                    </div>
-                                    <div class="ctt-info">
-                                       <span>Av Leguía y Meléndez 1112, Lima</span> <br>
-                                       <span>3169 SW 25th, Florida 33133</span>
-                                    </div>
-                                </div><!--contact_info end-->
-                                <br>
-                                <div class="contact_info">
-                                    <div class="ctt-icon clr3">
-                                        <img src="images/icon18.png" alt="">
-                                    </div>
-                                    <div class="ctt-info">
-                                        <span>+51 952334059</span>
-                                    </div>
-                                </div><!--contact_info end-->
-                                <br>
-                                <div class="contact_info">
-                                    <div class="ctt-icon clr4">
-                                        <img src="images/user_icon.png" alt="">
-                                    </div>
-                                    <div class="ctt-info">
-                                        <span>info@niomads.com</span>
-                                    </div>
-                                </div><!--contact_info end-->
+                     <div class="col-lg-6">
+                        <br>
+                        <div class="contact_info">
+                           <div class="ctt-icon">
+                                 <img src="images/icon16.png" alt="">
+                           </div>
+                           <div class="ctt-info">
+                                 <span>Lu-Sa: 9:00am - 5:00pm</span> <br>
+                                 <span>Domingos cerrado</span>
+                           </div>
+                        </div><!--contact_info end-->
+                        <br>
+                        <div class="contact_info">
+                           <div class="ctt-icon clr2">
+                                 <img src="images/icon17.png" alt="">
+                           </div>
+                           <div class="ctt-info">
+                              <span>Av Leguía y Meléndez 1112, Lima</span> <br>
+                              <span>3169 SW 25th, Florida 33133</span>
+                           </div>
+                        </div><!--contact_info end-->
+                        <br>
+                        <div class="contact_info">
+                           <div class="ctt-icon clr3">
+                                 <img src="images/icon18.png" alt="">
+                           </div>
+                           <div class="ctt-info">
+                                 <span>+51 952334059</span>
+                           </div>
+                        </div><!--contact_info end-->
+                        <br>
+                        <div class="contact_info">
+                           <div class="ctt-icon clr4">
+                                 <img src="images/user_icon.png" alt="">
+                           </div>
+                           <div class="ctt-info">
+                                 <span>info@niomads.com</span>
+                           </div>
+                        </div><!--contact_info end-->
 
-                            </div>
+                     </div>
 						</div>
 					</div><!--contact-page end-->
 				</div><!--page-content-row end-->
@@ -366,20 +357,9 @@
       <script async src='https://www.google.com/recaptcha/api.js?hl=es'></script>
 
       <script>
-         $( '#btn-validate' ).click(function(){
-            var $captcha = $( '#recaptcha' ),
-                  response = grecaptcha.getResponse();
-               if (response.length === 0) {
-               $( '.msg-error').text( "reCAPTCHA is mandatory" );
-               if( !$captcha.hasClass( "error" ) ){
-                  $captcha.addClass( "error" );
-               }
-            } else {
-               $( '.msg-error' ).text('');
-               $captcha.removeClass( "error" );
-               alert( 'reCAPTCHA marked' );
-            }
-         });
+         function onSubmit(token) {
+           document.getElementById("contact-form").submit();
+         }
       </script>
       <style>
          .msg-error {
