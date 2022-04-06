@@ -1,8 +1,5 @@
 $(window).on("load", function() {
     "use strict";
-
-
-
     //  ============= MOBILE RESPONSIVE MENU ===============
 
     $(".menu-bar").on("click", function(){
@@ -67,7 +64,8 @@ $(window).on("load", function() {
         }
     });
 
-    if($('#contact-form').length){
+    function sendMail() {
+      if($('#contact-form').length){
         $('#submit').on("click", function(){
           var form = '#contact-form';
           var name = $('#contact-form .name').val();
@@ -97,6 +95,7 @@ $(window).on("load", function() {
           });
         });
       }
+    } 
 
 });
 
